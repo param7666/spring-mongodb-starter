@@ -16,7 +16,16 @@ public class MangoDBAppRunner implements CommandLineRunner {
 	public void run(String... args) throws Exception {
 		try {
 			//repo.findByPriceBetween(50.0f, 350.0f).forEach(System.out::println);
-			repo.showProductDataByName("Butter").forEach(row->System.out.println(Arrays.toString(row)));
+			//repo.showProductDataByName("Butter").forEach(row->System.out.println(Arrays.toString(row)));
+			
+			// showProduct by name
+			//repo.showProductByName("Milk").forEach(System.out::println);
+			
+			// showProduct by name and status
+			//repo.showProductByNameAndStatus("Table", "Active").forEach(System.out::println);
+			
+			// show product within renge
+			repo.showProductByRenge(50.0f, 130.0f).forEach(row->System.out.println(Arrays.toString(row)));
 		} catch(Exception e) {
 			e.printStackTrace();
 		}
